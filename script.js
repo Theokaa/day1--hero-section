@@ -1,25 +1,17 @@
-const getStartedBtn = document.getElementById("getStartedBtn");
-const learnMoreBtn = document.getElementById("learnMoreBtn");
-const getStartedSection = document.getElementById("get-started");
-const learnMoreSection = document.getElementById("learn-more");
-
-function revealSection(section) {
-  if (!section) return;
-  section.classList.remove("hidden");
-  section.scrollIntoView({ behavior: "smooth", block: "start" });
+function scrollToHash(hash) {
+  if (!hash || hash === "#") return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-getStartedBtn?.addEventListener("click", (event) => {
-  event.preventDefault();
-  revealSection(getStartedSection);
-});
-
-learnMoreBtn?.addEventListener("click", (event) => {
-  event.preventDefault();
-  const features = document.getElementById("features");
-  if (features) {
-    features.scrollIntoView({ behavior: "smooth", block: "start" });
-    return;
-  }
-  revealSection(learnMoreSection);
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const hash = link.getAttribute("href");
+    const target = hash ? document.querySelector(hash) : null;
+    if (!target) return;
+    event.preventDefault();
+    scrollToHash(hash);
+    history.replaceState(null, "", hash);
+  });
 });

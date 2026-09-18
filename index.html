@@ -39,7 +39,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="font-sans antialiased text-white">
-    <main class="hero relative min-h-screen overflow-hidden">
+    <header class="site-header fixed inset-x-0 top-0 z-50">
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8"
+        aria-label="Primary"
+      >
+        <a href="#hero" class="text-sm font-semibold tracking-tight text-white sm:text-base">
+          BuildSomething
+        </a>
+        <div class="hidden items-center gap-8 text-sm font-medium text-white/80 sm:flex">
+          <a href="#features" class="transition hover:text-white">Features</a>
+          <a href="#pricing" class="transition hover:text-white">Pricing</a>
+          <a href="#pricing" class="rounded-full bg-white px-4 py-2 text-slate-900 transition hover:bg-slate-100">
+            Get Started
+          </a>
+        </div>
+        <a
+          href="#pricing"
+          class="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md sm:hidden"
+        >
+          Get Started
+        </a>
+      </nav>
+    </header>
+
+    <main id="hero" class="hero relative min-h-screen overflow-hidden scroll-mt-0">
       <div class="hero-gradient absolute inset-0" aria-hidden="true"></div>
       <div class="orb orb-one absolute animate-float" aria-hidden="true"></div>
       <div class="orb orb-two absolute animate-float" aria-hidden="true"></div>
@@ -71,7 +95,7 @@
           class="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row animate-[fadeUp_0.8s_ease-out_0.3s_both]"
         >
           <a
-            href="#get-started"
+            href="#pricing"
             id="getStartedBtn"
             class="btn-primary inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-slate-900 shadow-lg shadow-indigo-900/30 transition duration-200 hover:-translate-y-0.5 hover:bg-slate-100 sm:w-auto"
           >
@@ -90,7 +114,7 @@
 
     <section
       id="features"
-      class="features-section relative overflow-hidden px-6 py-24 sm:px-8"
+      class="features-section relative scroll-mt-24 overflow-hidden px-6 py-24 sm:px-8"
     >
       <div class="features-glow absolute inset-x-0 top-0 h-40" aria-hidden="true"></div>
 
@@ -166,26 +190,167 @@
     </section>
 
     <section
-      id="get-started"
-      class="hidden scroll-mt-24 bg-slate-950 px-6 py-24 text-center text-slate-200"
+      id="pricing"
+      class="pricing-section relative scroll-mt-24 overflow-hidden px-6 py-24 sm:px-8"
     >
-      <h2 class="text-3xl font-bold text-white">You're in.</h2>
-      <p class="mx-auto mt-4 max-w-xl text-slate-400">
-        This is where your product story continues. Replace this section with
-        onboarding, a signup form, or your first feature.
-      </p>
+      <div class="relative z-10 mx-auto max-w-6xl">
+        <div class="mx-auto max-w-2xl text-center">
+          <p
+            class="mb-4 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-white/80 backdrop-blur-md"
+          >
+            Pricing
+          </p>
+          <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+            Simple pricing, no surprises
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
+            Pick a plan that matches your pace. Upgrade anytime—no hidden fees,
+            no lock-in.
+          </p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 items-stretch gap-6 lg:grid-cols-3 lg:items-center">
+          <article class="pricing-card rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md">
+            <h3 class="text-lg font-semibold text-white">Starter</h3>
+            <p class="mt-4 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold tracking-tight">Free</span>
+            </p>
+            <p class="mt-2 text-sm text-white/60">For trying the layout and shipping a first page.</p>
+            <ul class="mt-8 space-y-3 text-sm text-white/80">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-indigo-300" aria-hidden="true">✓</span>
+                Core hero, features, and footer
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-indigo-300" aria-hidden="true">✓</span>
+                Responsive mobile layout
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-indigo-300" aria-hidden="true">✓</span>
+                Community support
+              </li>
+            </ul>
+            <a
+              href="#hero"
+              class="btn-secondary mt-8 inline-flex w-full items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+            >
+              Get started
+            </a>
+          </article>
+
+          <article
+            class="pricing-card pricing-card-popular relative rounded-2xl border-2 border-indigo-400/80 bg-white/10 p-8 backdrop-blur-md"
+          >
+            <p
+              class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white shadow-lg shadow-indigo-500/40"
+            >
+              Most Popular
+            </p>
+            <h3 class="text-lg font-semibold text-white">Pro</h3>
+            <p class="mt-4 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold tracking-tight">$19</span>
+              <span class="text-sm text-white/60">/mo</span>
+            </p>
+            <p class="mt-2 text-sm text-white/60">For makers who want polish and room to grow.</p>
+            <ul class="mt-8 space-y-3 text-sm text-white/80">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-pink-300" aria-hidden="true">✓</span>
+                Everything in Starter
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-pink-300" aria-hidden="true">✓</span>
+                Custom sections and animations
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-pink-300" aria-hidden="true">✓</span>
+                Priority email support
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-pink-300" aria-hidden="true">✓</span>
+                Remove branding
+              </li>
+            </ul>
+            <a
+              href="#pricing"
+              class="btn-primary mt-8 inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-indigo-900/30 transition hover:bg-slate-100"
+            >
+              Start Pro
+            </a>
+          </article>
+
+          <article class="pricing-card rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md">
+            <h3 class="text-lg font-semibold text-white">Team</h3>
+            <p class="mt-4 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold tracking-tight">$49</span>
+              <span class="text-sm text-white/60">/mo</span>
+            </p>
+            <p class="mt-2 text-sm text-white/60">For teams shipping together with extra control.</p>
+            <ul class="mt-8 space-y-3 text-sm text-white/80">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-indigo-300" aria-hidden="true">✓</span>
+                Everything in Pro
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-indigo-300" aria-hidden="true">✓</span>
+                Up to 10 seats
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-indigo-300" aria-hidden="true">✓</span>
+                Shared workspace
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-indigo-300" aria-hidden="true">✓</span>
+                Dedicated onboarding
+              </li>
+            </ul>
+            <a
+              href="#footer"
+              class="btn-secondary mt-8 inline-flex w-full items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+            >
+              Choose Team
+            </a>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section
-      id="learn-more"
-      class="hidden scroll-mt-24 bg-slate-900 px-6 py-24 text-center text-slate-200"
-    >
-      <h2 class="text-3xl font-bold text-white">Designed to scale.</h2>
-      <p class="mx-auto mt-4 max-w-xl text-slate-400">
-        Responsive from phone to desktop, with Tailwind utilities and a few
-        custom flourishes in CSS and JavaScript.
+    <footer id="footer" class="site-footer scroll-mt-24 px-6 py-16 sm:px-8">
+      <div class="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <a href="#hero" class="text-lg font-semibold tracking-tight text-white">BuildSomething</a>
+          <p class="mt-3 max-w-xs text-sm leading-relaxed text-white/60">
+            A modern starting point for landing pages that feel finished on day one.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">Product</p>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="footer-link" href="#features">Features</a></li>
+            <li><a class="footer-link" href="#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="#pricing">Get Started</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">Company</p>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="footer-link" href="#hero">About</a></li>
+            <li><a class="footer-link" href="#features">Blog</a></li>
+            <li><a class="footer-link" href="#footer">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">Legal</p>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="footer-link" href="#footer">Privacy</a></li>
+            <li><a class="footer-link" href="#footer">Terms</a></li>
+            <li><a class="footer-link" href="#footer">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-6 text-sm text-white/45">
+        Built by Kaatheo 2026
       </p>
-    </section>
+    </footer>
 
     <script src="script.js"></script>
   </body>
