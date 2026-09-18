@@ -1,0 +1,78 @@
+:root {
+  --hero-from: #0f172a;
+  --hero-via: #4f46e5;
+  --hero-to: #db2777;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #020617;
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(99, 102, 241, 0.45), transparent 60%),
+    linear-gradient(135deg, var(--hero-from) 0%, var(--hero-via) 52%, var(--hero-to) 100%);
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.orb {
+  border-radius: 9999px;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.orb-one {
+  top: 12%;
+  left: 8%;
+  width: min(280px, 42vw);
+  height: min(280px, 42vw);
+  background: rgba(56, 189, 248, 0.35);
+  animation-delay: -2s;
+}
+
+.orb-two {
+  right: 6%;
+  bottom: 10%;
+  width: min(320px, 48vw);
+  height: min(320px, 48vw);
+  background: rgba(244, 114, 182, 0.32);
+  animation-delay: -5s;
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .grid-overlay {
+    background-size: 32px 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float,
+  [class*="animate-"] {
+    animation: none !important;
+  }
+}
