@@ -16,5 +16,10 @@ getStartedBtn?.addEventListener("click", (event) => {
 
 learnMoreBtn?.addEventListener("click", (event) => {
   event.preventDefault();
+  const features = document.getElementById("features");
+  if (features) {
+    features.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
   revealSection(learnMoreSection);
 });

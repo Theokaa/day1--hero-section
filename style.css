@@ -60,6 +60,37 @@ body {
   outline-offset: 3px;
 }
 
+.features-section {
+  background: linear-gradient(180deg, #0f172a 0%, #020617 42%);
+}
+
+.features-glow {
+  background: radial-gradient(600px 160px at 50% 0%, rgba(79, 70, 229, 0.28), transparent 70%);
+  pointer-events: none;
+}
+
+.feature-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 18px 40px -16px rgba(79, 70, 229, 0.55),
+    0 8px 24px -12px rgba(219, 39, 119, 0.35);
+}
+
+.feature-card:focus-within {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 3px;
+}
+
 @media (max-width: 640px) {
   .grid-overlay {
     background-size: 32px 32px;
@@ -74,5 +105,11 @@ body {
   .animate-float,
   [class*="animate-"] {
     animation: none !important;
+  }
+
+  .feature-card,
+  .feature-card:hover {
+    transition: none;
+    transform: none;
   }
 }
